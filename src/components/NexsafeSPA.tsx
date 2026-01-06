@@ -133,64 +133,78 @@ export default function NexsafeSPA() {
                             exit={{ scale: 0.9, opacity: 0 }}
                             className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden"
                         >
-                            <button
-                                onClick={() => setIsOpen(false)}
-                                className="absolute top-4 right-4 z-10 p-2 bg-slate-100 rounded-full hover:bg-slate-200 transition-colors"
-                            >
-                                <X size={24} className="text-slate-600" />
-                            </button>
+                            <div className="flex flex-col md:flex-row h-auto md:h-[450px]">
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 h-[500px] md:h-[400px]">
+                                {/* Left Side: Visual/Color (Smaller width now) */}
+                                <div className="w-full md:w-1/3 bg-slate-900 p-8 flex flex-col justify-between relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-slate-900 to-secondary/20"></div>
 
-                                {/* Left Side: Visual/Color */}
-                                <div className="bg-slate-900 p-12 flex flex-col justify-center items-center text-center relative overflow-hidden">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+                                    {/* Decorative counter */}
+                                    <div className="relative z-10 text-white/40 text-xs font-bold uppercase tracking-widest mb-4">
+                                        Feature {currentIndex + 1} / {features.length}
+                                    </div>
+
                                     <motion.div
                                         key={currentIndex}
                                         initial={{ scale: 0.8, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
                                         transition={{ duration: 0.4 }}
-                                        className="relative z-10 p-6 bg-white/10 rounded-2xl backdrop-blur-sm mb-6"
+                                        className="relative z-10 flex-1 flex items-center justify-center"
                                     >
-                                        {(() => {
-                                            const Icon = features[currentIndex].icon;
-                                            return <Icon size={64} className="text-white" />;
-                                        })()}
+                                        <div className="p-8 rounded-full bg-white/5 border border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)] backdrop-blur-sm">
+                                            {(() => {
+                                                const Icon = features[currentIndex].icon;
+                                                return <Icon size={48} className="text-primary" />;
+                                            })()}
+                                        </div>
                                     </motion.div>
-                                    <div className="relative z-10 text-slate-400 text-sm font-bold uppercase tracking-widest">
-                                        Feature {currentIndex + 1} / {features.length}
+
+                                    {/* Mobile Controls (visible only on small screens) */}
+                                    <div className="flex justify-between md:hidden relative z-10 mt-4">
+                                        <button onClick={prevSlide} className="p-2 bg-white/10 rounded-full text-white"><ChevronLeft size={20} /></button>
+                                        <button onClick={nextSlide} className="p-2 bg-white/10 rounded-full text-white"><ChevronRight size={20} /></button>
                                     </div>
                                 </div>
 
-                                {/* Right Side: Text & Controls */}
-                                <div className="p-8 md:p-12 flex flex-col justify-center relative">
+                                {/* Right Side: Text & Controls (Larger width) */}
+                                <div className="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center relative bg-white">
+                                    <button
+                                        onClick={() => setIsOpen(false)}
+                                        className="absolute top-6 right-6 z-20 p-2 bg-slate-50 rounded-full hover:bg-slate-100 transition-colors"
+                                    >
+                                        <X size={20} className="text-slate-400 hover:text-slate-600" />
+                                    </button>
+
                                     <motion.div
                                         key={currentIndex}
                                         initial={{ x: 20, opacity: 0 }}
                                         animate={{ x: 0, opacity: 1 }}
                                         exit={{ x: -20, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
+                                        className="flex-1 flex flex-col justify-center"
                                     >
-                                        <h3 className="text-3xl font-black text-slate-900 mb-4">
+                                        <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 leading-tight">
                                             {features[currentIndex].title}
                                         </h3>
-                                        <p className="text-lg text-slate-600 leading-relaxed">
+                                        <div className="w-12 h-1 bg-primary mb-6 rounded-full" />
+                                        <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-medium">
                                             {features[currentIndex].desc}
                                         </p>
                                     </motion.div>
 
-                                    <div className="flex gap-4 mt-8">
+                                    {/* Desktop Controls */}
+                                    <div className="hidden md:flex gap-4 mt-8 justify-end">
                                         <button
                                             onClick={prevSlide}
-                                            className="p-3 rounded-full border border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition-all"
+                                            className="group px-6 py-3 rounded-full border border-slate-200 hover:bg-slate-50 text-slate-600 font-bold transition-all flex items-center gap-2"
                                         >
-                                            <ChevronLeft size={24} className="text-slate-700" />
+                                            <ChevronLeft size={18} className="group-hover:-translate-x-1 transition-transform" /> Previous
                                         </button>
                                         <button
                                             onClick={nextSlide}
-                                            className="p-3 rounded-full bg-primary text-white hover:bg-primary/90 hover:scale-105 transition-all shadow-md"
+                                            className="group px-6 py-3 rounded-full bg-slate-900 text-white font-bold hover:bg-primary transition-all shadow-lg flex items-center gap-2"
                                         >
-                                            <ChevronRight size={24} />
+                                            Next <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
                                         </button>
                                     </div>
 
