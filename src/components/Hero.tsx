@@ -3,17 +3,17 @@ import { ArrowRight, Globe, Shield, Zap } from 'lucide-react';
 
 export default function Hero() {
     const { scrollY } = useScroll();
-    const yBackground = useTransform(scrollY, [0, 1000], [0, 300]);
+
     const yfloat = useTransform(scrollY, [0, 500], [0, -100]);
 
     return (
         <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
 
             {/* Background Animated Shapes */}
-            <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-                <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-blob" />
-                <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-blob animation-delay-2000" />
-            </motion.div>
+            <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
+                <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl md:animate-blob will-change-transform" />
+                <div className="absolute bottom-20 left-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl md:animate-blob animation-delay-2000 will-change-transform" />
+            </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
