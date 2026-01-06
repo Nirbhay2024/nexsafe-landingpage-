@@ -1,32 +1,67 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Activity, ShieldCheck, Zap, FileText, Globe, ArrowRight, X, ChevronRight, ChevronLeft, Eye } from 'lucide-react';
+import { Activity, Eye, MapPin, ClipboardCheck, MessageSquare, FileText, Building2, ArrowRight, X, ChevronRight, ChevronLeft } from 'lucide-react';
 
 const features = [
     {
         icon: Eye,
-        title: "Real-Time Visibility",
-        desc: "Capture progress directly from the field through geo-tagged visual updates. Get a clear picture of what's completed, in-progress, and remaining."
+        title: "Project Visibility & Access",
+        points: [
+            "Real-time project status visibility",
+            "Single, consolidated view across sites and locations",
+            "Instant access to live project progress",
+            "Reduced dependency on manual reporting and site visits"
+        ]
     },
     {
-        icon: ShieldCheck,
-        title: "Verified Proof",
-        desc: "Every update is supported by location-verified evidence. Progress is not just reported, but validated, reducing ambiguity and increasing confidence."
+        icon: MapPin,
+        title: "Verified On-Ground Execution",
+        points: [
+            "Geo-tagged, time-stamped visual proof",
+            "Location-verified progress updates",
+            "Tamper-resistant evidence capture",
+            "Clear validation of work completed on site"
+        ]
     },
     {
-        icon: Zap,
-        title: "Faster Decisions",
-        desc: "Structured updates make it easier to review progress and identify gaps early, reducing delays caused by late-stage corrections."
+        icon: ClipboardCheck,
+        title: "Execution Discipline & Quality",
+        points: [
+            "Structured, milestone-based execution",
+            "Built-in enforcement of approved workflows",
+            "Reduced execution deviations and rework",
+            "Higher consistency across contractors and regions"
+        ]
+    },
+    {
+        icon: MessageSquare,
+        title: "Review, Approvals & Resolution",
+        points: [
+            "Early identification of gaps and issues",
+            "Faster review and approval cycles",
+            "Clear feedback and resolution tracking",
+            "Reduced last-mile execution risk"
+        ]
     },
     {
         icon: FileText,
-        title: "Continuous Documentation",
-        desc: "All activity is automatically recorded, creating a comprehensive digital record that simplifies audits, reviews, and historical data access."
+        title: "Documentation & Compliance",
+        points: [
+            "Automatic digital audit trail",
+            "Always-available execution records",
+            "Simplified compliance and reporting",
+            "Audit-ready documentation by default"
+        ]
     },
     {
-        icon: Globe,
-        title: "Business at Scale",
-        desc: "Built to support large, distributed projects. Reduces manual coordination and improves transparency between clients, internal teams, and partners."
+        icon: Building2,
+        title: "Enterprise-Grade Governance",
+        points: [
+            "Clear accountability across stakeholders",
+            "Role-based access and controls",
+            "Secure and controlled information sharing",
+            "Designed for large, distributed projects"
+        ]
     }
 ];
 
@@ -67,18 +102,21 @@ export default function NexsafeSPA() {
                             Nexsafe <span className="text-secondary">SPA</span>
                         </h2>
                         <h3 className="text-2xl font-bold text-slate-700 mb-6">
-                            Instant Access to Project Status
+                            Clear Visibility Into On-Ground Execution
                         </h3>
 
+                        <p className="text-slate-600 text-lg leading-relaxed mb-6">
+                            <strong>Secure Project Access. Verified Execution. Absolute Control.</strong>
+                        </p>
                         <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                            Clients are provided secure access to a live project view that reflects actual on-ground progress. Without relying on periodic reports, stakeholders can see the current status of their projects at any time.
+                            Nexsafe SPA is a proprietary, industry-first execution assurance platform that gives organizations real-time confidence in how their projects are progressing on the ground. It converts on-site activity into verifiable, location-anchored proof of progress.
                         </p>
 
                         <button
                             onClick={() => setIsOpen(true)}
                             className="group px-8 py-4 bg-slate-900 text-white font-bold rounded-full hover:bg-primary transition-colors flex items-center gap-2 shadow-lg"
                         >
-                            Learn More <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            Explore Capabilities <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </button>
                     </motion.div>
 
@@ -102,8 +140,8 @@ export default function NexsafeSPA() {
                                 </div>
                             </div>
                             <div className="space-y-6 opacity-80">
-                                <div className="h-32 bg-slate-100 rounded-xl relative overflow-hidden">
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-400 font-bold">Interactive Dashboard</div>
+                                <div className="h-32 bg-slate-100 rounded-xl relative overflow-hidden flex items-center justify-center">
+                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-400 font-bold tracking-widest uppercase">Project Dashboard</div>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +171,7 @@ export default function NexsafeSPA() {
                             exit={{ scale: 0.9, opacity: 0 }}
                             className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden"
                         >
-                            <div className="flex flex-col md:flex-row h-auto md:h-[450px]">
+                            <div className="flex flex-col md:flex-row h-auto min-h-[500px]">
 
                                 {/* Left Side: Visual/Color (Smaller width now) */}
                                 <div className="w-full md:w-1/3 bg-slate-900 p-8 flex flex-col justify-between relative overflow-hidden">
@@ -141,7 +179,7 @@ export default function NexsafeSPA() {
 
                                     {/* Decorative counter */}
                                     <div className="relative z-10 text-white/40 text-xs font-bold uppercase tracking-widest mb-4">
-                                        Feature {currentIndex + 1} / {features.length}
+                                        Capability {currentIndex + 1} / {features.length}
                                     </div>
 
                                     <motion.div
@@ -183,13 +221,19 @@ export default function NexsafeSPA() {
                                         transition={{ duration: 0.3 }}
                                         className="flex-1 flex flex-col justify-center"
                                     >
-                                        <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 leading-tight">
+                                        <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 leading-tight">
                                             {features[currentIndex].title}
                                         </h3>
-                                        <div className="w-12 h-1 bg-primary mb-6 rounded-full" />
-                                        <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-medium">
-                                            {features[currentIndex].desc}
-                                        </p>
+
+                                        <ul className="space-y-3 mb-4">
+                                            {features[currentIndex].points.map((point, idx) => (
+                                                <li key={idx} className="flex items-start gap-3">
+                                                    <div className="min-w-[8px] h-[8px] rounded-full bg-primary mt-2.5" />
+                                                    <span className="text-lg text-slate-600 font-medium leading-relaxed">{point}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+
                                     </motion.div>
 
                                     {/* Desktop Controls */}
