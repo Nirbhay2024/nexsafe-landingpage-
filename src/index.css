@@ -8,18 +8,14 @@
     --foreground: 222.2 84% 4.9%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary;
-    background-color: #050B14;
+    background-color: #ffffff;
+    color: #0f172a;
     overflow-x: hidden;
   }
 }
@@ -30,14 +26,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B1120;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94a3b8;
 }

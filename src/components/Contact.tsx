@@ -3,14 +3,14 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Contact() {
     return (
-        <section id="contact" className="py-24 relative border-t border-white/5">
+        <section id="contact" className="py-24 relative border-t border-slate-100 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-5xl font-black text-white mb-8"
+                    className="text-5xl font-black text-slate-900 mb-8"
                 >
                     Let's Build the <span className="text-primary">Future</span>
                 </motion.h2>
@@ -24,13 +24,13 @@ export default function Contact() {
                         <motion.div
                             key={i}
                             whileHover={{ y: -5 }}
-                            className="bg-white/5 border border-white/5 p-8 rounded-2xl"
+                            className="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all"
                         >
                             <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary mb-4">
                                 <item.icon size={24} />
                             </div>
-                            <h3 className="text-white font-bold mb-2">{item.title}</h3>
-                            <p className="text-gray-400">{item.text}</p>
+                            <h3 className="text-slate-900 font-bold mb-2">{item.title}</h3>
+                            <p className="text-slate-500">{item.text}</p>
                         </motion.div>
                     ))}
                 </div>

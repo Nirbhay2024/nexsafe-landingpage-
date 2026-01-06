@@ -7,10 +7,10 @@ export default function Partners() {
     ];
 
     return (
-        <section className="py-12 bg-black/50 border-y border-white/5 overflow-hidden">
+        <section className="py-12 bg-white border-y border-slate-100 overflow-hidden">
             <div className="max-w-full">
 
-                <p className="text-center text-gray-500 text-xs font-bold uppercase tracking-[0.2em] mb-8">Trusted by Industry Leaders</p>
+                <p className="text-center text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mb-8">Trusted by Industry Leaders</p>
 
                 <div className="flex whitespace-nowrap">
                     <motion.div
@@ -21,7 +21,7 @@ export default function Partners() {
                         {[...brands, ...brands].map((brand, index) => (
                             <span
                                 key={index}
-                                className="text-3xl font-black text-white/20 uppercase hover:text-white/40 transition-colors"
+                                className="text-3xl font-black text-slate-200 uppercase hover:text-slate-400 transition-colors"
                             >
                                 {brand}
                             </span>

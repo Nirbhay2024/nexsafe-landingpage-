@@ -13,11 +13,11 @@ export default function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-5xl font-black text-white mb-6 leading-tight">
+                        <h2 className="text-5xl font-black text-slate-900 mb-6 leading-tight">
                             Building Trust. <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Delivering Power.</span>
                         </h2>
-                        <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                        <p className="text-slate-600 text-lg mb-8 leading-relaxed">
                             In an industry clouded by complexity, Nexsafe Energy Infra stands as a beacon of transparency. We don't just execute projects; we engineer relationships built on decades of integrity.
                         </p>
 
@@ -25,7 +25,7 @@ export default function About() {
                             {["Unwavering Integrity", "Complete Transparency", "End-to-End Execution"].map((feature, index) => (
                                 <div key={index} className="flex items-center gap-3">
                                     <CheckCircle2 className="text-primary" size={20} />
-                                    <span className="text-white font-medium">{feature}</span>
+                                    <span className="text-slate-800 font-medium">{feature}</span>
                                 </div>
                             ))}
                         </div>
@@ -37,15 +37,15 @@ export default function About() {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="aspect-square rounded-full overflow-hidden border-2 border-white/10 relative z-10">
+                        <div className="aspect-square rounded-full overflow-hidden border-8 border-slate-50 shadow-2xl relative z-10">
                             <img
                                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
                                 alt="Construction"
-                                className="w-full h-full object-cover opacity-80"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                         {/* Spinning Text Ring Mockup - decorative */}
-                        <div className="absolute -inset-4 border border-dashed border-white/20 rounded-full animate-spin-slow" />
+                        <div className="absolute -inset-4 border border-dashed border-slate-300 rounded-full animate-spin-slow" />
                     </motion.div>
 
                 </div>

@@ -7,32 +7,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#050B14", // Deeper, richer black
-        foreground: "#f8fafc",
+        background: "#ffffff",
+        foreground: "#0f172a", // Slate 900
         primary: {
-          DEFAULT: "#00E0FF", // Electric Cyan
-          foreground: "#000000",
+          DEFAULT: "#1B365D", // Corporate Navy Blue (from Logo Text)
+          foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#7000FF", // Electric Purple
+          DEFAULT: "#7AB800", // Energy Green (from Logo Icon)
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#FF00E5", // Neon Pink/Magenta
+          DEFAULT: "#00A3E0", // Cyan/Blue for gradients
           foreground: "#ffffff",
         },
         muted: {
-          DEFAULT: "#1e293b",
-          foreground: "#94a3b8",
+          DEFAULT: "#f1f5f9",
+          foreground: "#64748b",
         },
       },
       fontFamily: {
-        sans: ['Outfit', 'Inter', 'sans-serif'], // Swapping to Outfit for a funkier look if possible, fallback Inter
+        sans: ['Outfit', 'Inter', 'sans-serif'],
       },
       animation: {
         'blob': 'blob 7s infinite',
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 12s linear infinite',
       },
       keyframes: {
         blob: {

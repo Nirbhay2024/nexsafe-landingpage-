@@ -25,9 +25,9 @@ export default function Projects() {
 
                 <div className="flex justify-between items-end mb-16">
                     <div>
-                        <h2 className="text-5xl font-black text-white mb-2">Featured <span className="text-primary">Work</span></h2>
+                        <h2 className="text-5xl font-black text-slate-900 mb-2">Featured <span className="text-primary">Work</span></h2>
                     </div>
-                    <a href="#contact" className="hidden md:flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                    <a href="#contact" className="hidden md:flex items-center gap-2 text-slate-400 hover:text-primary transition-colors font-semibold">
                         View All <ArrowUpRight size={18} />
                     </a>
                 </div>
@@ -40,10 +40,10 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white/5 p-6 rounded-3xl border border-white/5 hover:border-primary/30 transition-all duration-500"
+                            className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white p-6 rounded-3xl border border-slate-100 shadow-lg hover:shadow-2xl hover:border-primary/20 transition-all duration-500"
                         >
-                            <div className="relative h-[300px] lg:h-[400px] w-full rounded-2xl overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                            <div className="relative h-[300px] lg:h-[400px] w-full rounded-2xl overflow-hidden shadow-inner">
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent z-10" />
                                 <img
                                     src={project.image}
                                     alt={project.title}
@@ -59,9 +59,9 @@ export default function Projects() {
                                         </span>
                                     ))}
                                 </div>
-                                <h3 className="text-3xl font-bold text-white mb-4">{project.title}</h3>
-                                <p className="text-xl text-gray-400 mb-8">{project.desc}</p>
-                                <button className="px-6 py-3 border border-white/20 rounded-full text-white hover:bg-white hover:text-black transition-all font-semibold">
+                                <h3 className="text-3xl font-bold text-slate-900 mb-4">{project.title}</h3>
+                                <p className="text-xl text-slate-500 mb-8">{project.desc}</p>
+                                <button className="px-6 py-3 border border-slate-200 rounded-full text-slate-900 hover:bg-slate-900 hover:text-white transition-all font-semibold shadow-sm">
                                     View Case Study
                                 </button>
                             </div>
